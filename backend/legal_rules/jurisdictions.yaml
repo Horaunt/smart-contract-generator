@@ -1,0 +1,115 @@
+jurisdictions:
+  india:
+    name: "India"
+    legal_framework: "Indian Contract Act 1872, Information Technology Act 2000"
+    required_fields:
+      - payee_address
+      - payer_address
+      - contract_value
+    compliance_rules:
+      - "Must comply with Indian Contract Act 1872"
+      - "Digital signatures must follow IT Act 2000"
+      - "Contracts above ₹500,000 require stamp duty consideration"
+      - "Dispute resolution must specify Indian jurisdiction"
+    contract_clauses:
+      escrow:
+        - "Include provisions for Indian Arbitration and Conciliation Act 2015"
+        - "Specify governing law as Indian law"
+        - "Include force majeure clause covering natural disasters"
+      insurance:
+        - "Must comply with Insurance Regulatory and Development Authority (IRDA) guidelines"
+        - "Include claim settlement timeline as per IRDA norms"
+        - "Specify premium payment in Indian Rupees or equivalent"
+      settlement:
+        - "Include mediation clause as per Indian legal system"
+        - "Specify courts of competent jurisdiction in India"
+        - "Include provisions for enforcement under Civil Procedure Code"
+    
+  eu:
+    name: "European Union"
+    legal_framework: "GDPR, eIDAS Regulation, Rome I Regulation"
+    required_fields:
+      - payee_address
+      - payer_address
+      - data_protection_clause
+    compliance_rules:
+      - "Must comply with GDPR for data processing"
+      - "Electronic signatures must follow eIDAS standards"
+      - "Consumer protection under EU Consumer Rights Directive"
+      - "Cross-border disputes under Brussels I Regulation"
+    contract_clauses:
+      escrow:
+        - "Include GDPR-compliant data processing clauses"
+        - "Specify governing law under Rome I Regulation"
+        - "Include right of withdrawal for consumers (14 days)"
+      insurance:
+        - "Must comply with Solvency II Directive"
+        - "Include cooling-off period for insurance contracts"
+        - "Specify premium in EUR or member state currency"
+      settlement:
+        - "Include alternative dispute resolution mechanisms"
+        - "Specify jurisdiction under Brussels I Regulation"
+        - "Include enforcement under European Enforcement Order"
+    
+  us:
+    name: "United States"
+    legal_framework: "UCC, Electronic Signatures in Global and National Commerce Act"
+    required_fields:
+      - payee_address
+      - payer_address
+      - state_jurisdiction
+    compliance_rules:
+      - "Must comply with applicable state contract law"
+      - "Electronic signatures valid under E-SIGN Act"
+      - "Consumer protection under FTC Act"
+      - "Securities regulations if applicable (SEC)"
+    contract_clauses:
+      escrow:
+        - "Include choice of law clause specifying state"
+        - "Include dispute resolution and arbitration clauses"
+        - "Specify compliance with state escrow regulations"
+      insurance:
+        - "Must comply with state insurance regulations"
+        - "Include state-specific claim procedures"
+        - "Specify premium in USD"
+      settlement:
+        - "Include federal and state court jurisdiction"
+        - "Specify governing state law"
+        - "Include enforcement mechanisms under state law"
+
+contract_types:
+  escrow:
+    description: "Third-party holding of funds until conditions are met"
+    required_functions:
+      - deposit
+      - release
+      - dispute_resolution
+      - refund
+    security_considerations:
+      - "Multi-signature requirements"
+      - "Time-locked releases"
+      - "Dispute arbitration mechanism"
+  
+  insurance:
+    description: "Risk transfer mechanism with premium payments"
+    required_functions:
+      - premium_payment
+      - claim_submission
+      - claim_assessment
+      - payout
+    security_considerations:
+      - "Oracle integration for claim verification"
+      - "Premium calculation transparency"
+      - "Fraud prevention mechanisms"
+  
+  settlement:
+    description: "Dispute resolution and payment settlement"
+    required_functions:
+      - dispute_submission
+      - evidence_submission
+      - arbitration
+      - settlement_execution
+    security_considerations:
+      - "Evidence integrity verification"
+      - "Arbitrator selection mechanism"
+      - "Appeal process implementation"
